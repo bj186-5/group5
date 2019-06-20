@@ -2,10 +2,10 @@ package com.bj186.fms.pojo;
 
 import java.util.Date;
 
-public class LoginUser {
+public class User {
     private Integer userid;
 
-    private String loginname;
+    private String username;
 
     private String password;
 
@@ -25,12 +25,12 @@ public class LoginUser {
         this.userid = userid;
     }
 
-    public String getLoginname() {
-        return loginname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLoginname(String loginname) {
-        this.loginname = loginname == null ? null : loginname.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
     public String getPassword() {
