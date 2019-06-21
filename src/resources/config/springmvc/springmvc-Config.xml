@@ -16,4 +16,5 @@
        <!-- 前端控制器，哪些静态资源不拦截 -->
        <mvc:default-servlet-handler />
 
+
 </beans>
