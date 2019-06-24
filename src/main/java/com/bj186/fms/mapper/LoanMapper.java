@@ -14,4 +14,5 @@ public interface LoanMapper {
     int updateByPrimaryKeySelective(Loan record);
 
     int updateByPrimaryKey(Loan record);
+
 }

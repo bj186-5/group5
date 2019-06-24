@@ -23,9 +23,9 @@
        <!-- 前端控制器，哪些静态资源不拦截 -->
        <mvc:default-servlet-handler />
 
-
        <import resource="classpath:config/spring/spring-Config-tx.xml"></import>
        <import resource="classpath:config/spring/spring-Config-jdbc.xml"></import>
        <import resource="classpath:config/spring/spring-Config-bean.xml"></import>
        <import resource="classpath:config/springmvc/springmvc-Config.xml"></import>
+
 </beans>
