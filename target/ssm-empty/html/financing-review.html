@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="shortcut icon" href="/statics/img/SE.ico">
+<link rel="stylesheet" href="/statics/css/financing-review.css">
+<script type="text/javascript" src="/statics/js/jquery-3.1.1.min.js"></script>
+<script src="/statics/js/mock-min.js"></script>
+<script src="/statics/js/server.js"></script>
+<!--<script type="text/javascript" src="/statics/js/user-main.js"></script>-->
+<!--<script type="text/javascript" src="/statics/js/finacing-review.js"></script>-->
+<body>
+<h1  id="mockjs">复审</h1>
+<img src="/statics/img/logo.png">
+</body>
+<script type="text/javascript">
+    //ajax请求
+    $("#mockjs").click(function(){
+        $.ajax({
+            url        : "http://mockjs",    //请求的url地址
+            dataType   : "json",   //返回格式为json
+            async      : true, //请求是否异步，默认为异步，这也是ajax重要特性
+            data       : {},    //参数值
+            type       : "GET",   //请求方式
+            beforeSend : function() {
+                //请求前的处理
+            },
+            success: function(req) {
+                //请求成功时处理
+                console.log(req);
+                var o = $("<ul/>");
+                for (var k in req){
+                    var oli=$("<li/>");
+                    oli.html(req[k]);
+                    o.append(oli);
+                }
+                $("body").append(o);
+            },
+            complete: function() {
+                //请求完成的处理
+            },
+            error: function() {
+                //请求出错处理
+            }
+        });
+    });
+</script>
+</html>
