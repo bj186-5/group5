@@ -72,7 +72,7 @@
 </div>
 </body>
 <script type="text/html" id="yqy">
-    <a class="layui-btn layui-btn-normal layui-btn-mini">已启用</a>
+    <a class="layui-btn layui-btn-normal layui-btn-mini" id="yty">已启用</a>
 </script>
 <script type="text/html" id="cz">
     <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
@@ -84,6 +84,8 @@
     <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
         <i class="layui-icon">&#xe640;</i>
     </a>
+
+
 </script>
 <script>
     //进入页面直接加载ajax
@@ -95,10 +97,10 @@
             ,cellMinWidth: 180 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             ,cols: [[
                 {type:'checkbox',width:179},
-                ,{field:'id', width:179, title: 'ID'}
+                ,{field:'id', title: 'ID'}
                 ,{field:'username', width:180, title: '姓名'}
                 ,{field:'sex', width:180, title: '拥有权限'}
-                ,{field:'sign', title: '描述', width: 225, minWidth: 100} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                ,{field:'sign', title: '描述', width: 555, minWidth: 100} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
                 ,{field:'experience', title: '状态' ,width:180,toolbar:'#yqy'}
                 ,{field:'score', title: '操作',width:181,toolbar:'#cz'}
 
@@ -125,20 +127,17 @@
     /*用户-停用*/
     function member_stop(obj,id){
         layer.confirm('确认要停用吗？',function(index){
-
             if($(obj).attr('title')=='启用'){
-
                 //发异步把用户状态进行更改
                 $(obj).attr('title','停用')
                 $(obj).find('i').html('&#xe62f;');
 
                 $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
+                $("#yty").html("已停职")
                 layer.msg('已停用!',{icon: 5,time:1000});
-
             }else{
                 $(obj).attr('title','启用')
                 $(obj).find('i').html('&#xe601;');
-
                 $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
                 layer.msg('已启用!',{icon: 5,time:1000});
             }
